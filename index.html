@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aplicação Leadcultura CHA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F1; --card:#FFFFFF; --ink:#17231C; --muted:#5E6B63; --line:#D9DFD6;
+  --accent:#1F6B45; --accent-ink:#FFFFFF; --accent-soft:#E2EFE7; --seg:#D3DAD0; --err:#B3392B;
+  --sel:#EAF3EC;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1712; --card:#16211A; --ink:#E8EFE9; --muted:#97A59B; --line:#2A3A2F;
+    --accent:#5FBF8A; --accent-ink:#0B1A11; --accent-soft:#1C3024; --seg:#26372C; --err:#F08A7B; --sel:#1B2C21; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1712; --card:#16211A; --ink:#E8EFE9; --muted:#97A59B; --line:#2A3A2F;
+  --accent:#5FBF8A; --accent-ink:#0B1A11; --accent-soft:#1C3024; --seg:#26372C; --err:#F08A7B; --sel:#1B2C21; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px;min-height:100vh}
+.wrap{max-width:560px;margin:0 auto}
+.brand{display:flex;align-items:baseline;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.brand span{font-weight:500;color:var(--muted);font-size:.9rem}
+.bar{display:flex;gap:4px;margin:18px 0 6px}
+.bar i{flex:1;height:5px;border-radius:3px;background:var(--seg);transition:background .25s}
+.bar i.on{background:var(--accent)}
+.meta{display:flex;align-items:center;justify-content:space-between;min-height:32px;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted)}
+.back{border:0;background:none;color:var(--ink);font-size:1.4rem;line-height:1;padding:4px 10px 4px 0;cursor:pointer}
+.back[hidden]{display:none}
+h1,h2{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.6rem,6vw,2.1rem);line-height:1.12;margin:18px 0 8px}
+h2{font-size:1.5rem;line-height:1.15}
+.sub{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.q{animation:in .22s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+label.l{display:block;font-weight:600;margin-bottom:8px}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+.phone{display:flex;gap:8px}.phone select{width:112px;flex:none}
+.err{color:var(--err);font-size:.88rem;min-height:1.3em;margin:6px 0 0}
+.btn{display:block;width:100%;margin-top:14px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);font:600 1rem 'Instrument Sans',sans-serif;padding:14px;cursor:pointer;text-align:center;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;cursor:pointer;transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:var(--sel)}
+.opt b{display:block;font-weight:600}
+.opt .od{display:block;color:var(--muted);font-size:.9rem}
+.opt .op{display:block;margin-top:6px;font:500 .8rem 'JetBrains Mono',monospace;color:var(--accent)}
+.next{margin-top:14px;padding:16px 20px;border:1px dashed var(--line);border-radius:14px;opacity:.45;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;pointer-events:none;user-select:none}
+.center{text-align:center;padding:56px 0}
+.spin{width:44px;height:44px;margin:0 auto 20px;border-radius:50%;border:4px solid var(--seg);border-top-color:var(--accent);animation:sp .9s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.badge{display:inline-block;font:500 .75rem 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:99px}
+ul.pauta{margin:12px 0 4px;padding:0;list-style:none;display:grid;gap:10px}
+ul.pauta li{display:flex;gap:10px}
+ul.pauta li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--accent)}
+.facts{margin-top:16px;padding:14px;border-radius:10px;background:var(--accent-soft);font-size:.92rem}
+.facts b{display:block;font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:var(--accent)}
+.dbg{margin-top:24px;padding:14px;border:1px dashed var(--err);border-radius:10px;font:500 .78rem/1.5 'JetBrains Mono',monospace;white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+body{margin:0}
+[hidden]{display:none!important}
+.agenda{width:100%;height:640px;border:0;border-radius:10px;margin-top:16px;background:#fff}
+</style>
+
+</head><body>
+<div class="wrap">
+  <div class="brand">Leadcultura <span>× CHA</span></div>
+  <div class="bar" id="bar" aria-hidden="true"></div>
+  <div class="meta"><button class="back" id="back" aria-label="Voltar" hidden>←</button><span id="step"></span></div>
+  <main id="main"></main>
+  <div id="dbg"></div>
+</div>
+
+<script>
+/* ===== CONFIGURAÇÃO (ajuste aqui) ===== */
+var AGENDA_URL = "https://calendar.app.google/2xyjvcvbNEuv9WjMA";
+/* URL do webhook (n8n) que recebe cada resposta e cria/atualiza o lead no RD. Vazio = não envia. */
+var WEBHOOK_URL = "";
+var PANORAMA_URL = "https://pesquisa.leadcultura.com.br/p/panorama2026";
+var SITE_URL = "https://leadcultura.com.br";
+var THRESH_HIGH = 7, THRESH_MID = 4;
+/* Campos e opções IDÊNTICOS aos campos de contato do RD Station (texto exato). */
+var RD_KEYS = { fmt:"cf_sla_tipo_de_projeto", cargo:"cf_qual_o_seu_cargo", ramo:"cf_qual_seu_ramo_de_ativiade_agro", vend:"cf_sla_quantas_vendedores_voce_tem_no_seu_time", tempo:"cf_sla_tempo_de_mercado_da_empresa" };
+var CARGOS = ["Analista","Gerente / Coordenador(a)","Diretor(a)","Dono / Sócio / CEO","Freelancer / Consultor","Estudante","Vendedor / RTV","Produtor Rural ou Pecuarista"];
+var RAMOS = ["Agro Indústria","AgTech e Tecnologia","Loja | Distribuidor | Revenda de Insumos","Produtor Rural","Agência de Marketing","Educação e Ensino","Máquinas ou Equipamentos","Serviços ou Consultorias","Cooperativa","Fintech | Banco | Crédito"];
+var VENDS = ["1 a 3","4 a 10","11 a 20","Acima de 20"];
+/* Formatos (pergunta final). Faixas de investimento mostradas no formulário. */
+var FORMATOS = [
+ {n:"Mentoria em grupo", t:"Mentoria em Grupo", d:"Ensinamos e direcionamos, você faz", p:"de R$ 18.000 a R$ 25.000 por ano", rd:"Mentoria em Grupo (ensinamos e direcionamos, você faz): de R$ 18.000 a R$ 25.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2gzzqwOfcFHhLmLhz1hVhinWF6dx86FEgrbzl5AKJUu6bvjDny9R_JM1z-fU7nUo1-UlfOhdwC?gv=true", f:"Aprendizado e direcionamento em grupo, com a sua equipe executando o plano."},
+ {n:"Consultoria individual", t:"Consultoria individual", d:"Fazemos com você", p:"de R$ 20.000 a R$ 70.000 por ano", rd:"Consultoria individual (fazemos com você): de R$ 20.000 a R$ 70.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ22aS2F5f3ZVjfPhBkpSl-wyclTyOwI2-wZ7YW_jDHIpT4I8BI8DFy-3ulpAv8bD1_BET5-vb8C?gv=true", f:"Trabalho lado a lado com o nosso time, desenhando e implantando a operação de receita com você."},
+ {n:"Operação de receita", t:"Nosso time executa a operação de receita", d:"Fazemos para você", p:"de R$ 75.000 a R$ 200.000 por ano", rd:"Nosso time executa a operação de receita (fazemos pra você): de R$ 75.000 a R$ 200.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2boZXbQ2fNS7YVPerjTBAM8UaWoH5pWNdvHXCkVV_oFr_HJN8OQTO9q2vYWh5Zb_tSo498eehd?gv=true", f:"O nosso time assume e executa a operação de receita da sua empresa."}
+];
+var TEMPOS = ["Iniciando Empresa","Até 2 anos","Entre 2 e 5 anos","Entre 5 e 10 anos","Entre 10 e 15 anos","Mais de 15 anos"];
+/* Pontos (mesma ordem das listas acima). Máximo 3+2+3+2 = 10 */
+var S_CARGO = [0,2,3,3,1,0,1,0];
+var S_RAMO  = [2,2,2,0,0,1,2,2,2,2];
+var S_VEND  = [1,2,3,3];
+var S_TEMPO = [0,1,1,2,2,2];
+/* Desqualificados (índices): cargo Estudante e Produtor Rural; ramo Produtor Rural e Agência de Marketing */
+var DESQ_CARGO = [5,7];
+var DESQ_RAMO = [3,4];
+var PAISES = [["BR","+55"],["PY","+595"],["AR","+54"],["PT","+351"],["US","+1"]];
+
+var TOTAL = 9;
+var st = { i:0, a:{}, leadId:null, done:false, wait:false };
+var main = document.getElementById('main');
+
+function titleOf(i){
+  return ["Qual é o seu e-mail?","Qual é o seu nome completo?","Qual é o seu WhatsApp?","Qual é o nome da sua empresa?","Qual é o seu cargo?","Qual o seu ramo de atividade no agro?","Quantos vendedores você tem no seu time?","Qual o tempo de mercado da empresa?","Qual formato se encaixa melhor para você neste momento?"][i];
+}
+
+/* ===== Pontuação ===== */
+function calc(a){
+  var parts = { cargo:S_CARGO[a.cargo]||0, ramo:S_RAMO[a.ramo]||0, vend:S_VEND[a.vend]||0, tempo:S_TEMPO[a.tempo]||0 };
+  var score = parts.cargo+parts.ramo+parts.vend+parts.tempo;
+  var desq = DESQ_CARGO.indexOf(a.cargo)>-1 || DESQ_RAMO.indexOf(a.ramo)>-1;
+  var band = desq ? "desqualificado" : score>=THRESH_HIGH ? "alta" : score>=THRESH_MID ? "media" : "baixa";
+  return { parts:parts, score:score, band:band, fmt:FORMATOS[a.fmt] };
+}
+
+/* ===== Integração: ÚNICO ponto de saída dos dados ===== */
+function save(event){
+  var data={event:event, leadId:st.leadId, answers:st.a, utms:utms(), page:location.href, ts:new Date().toISOString()};
+  try{ localStorage.setItem('lc_lead', JSON.stringify(data)); }catch(e){}
+  if(WEBHOOK_URL){
+    /* text/plain evita o preflight de CORS; o n8n lê o corpo como JSON */
+    try{ fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data),keepalive:true}).catch(function(){}); }catch(e){}
+  }
+}
+function utms(){
+  var o={}; try{ new URLSearchParams(location.search).forEach(function(v,k){ if(/^utm_|^gclid|^fbclid/.test(k)) o[k]=v; }); }catch(e){}
+  return o;
+}
+
+/* ===== Render ===== */
+function bar(){
+  var h=''; for(var k=0;k<TOTAL;k++) h+='<i class="'+(k<=st.i||st.done||st.wait?'on':'')+'"></i>';
+  document.getElementById('bar').innerHTML=h;
+  document.getElementById('step').textContent = (st.done||st.wait) ? '' : (st.i+1)+' / '+TOTAL;
+  document.getElementById('back').hidden = !(st.i>0 && !st.done && !st.wait);
+}
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+function render(){
+  bar();
+  if(st.wait){ main.innerHTML='<div class="center"><div class="spin"></div><h2>Aguarde…</h2><p class="sub">Ainda falta a última etapa!</p></div>'; return; }
+  if(st.done){ renderResult(); return; }
+  var i=st.i, h='<h1>'+esc(titleOf(i))+'</h1>';
+  if(i===0) h+='<p class="sub">Comece pelo e-mail. Leva menos de 1 minuto.</p>'; else h+='<p class="sub"></p>';
+  h+='<div class="card q">';
+  if(i===0){
+    h+='<label class="l" for="f">E-mail</label><input id="f" type="email" inputmode="email" autocomplete="email" placeholder="voce@empresa.com.br" value="'+esc(st.a.email||'')+'">';
+  } else if(i===1){
+    h+='<label class="l" for="f">Nome e sobrenome</label><input id="f" type="text" autocomplete="name" placeholder="Maria Souza" value="'+esc(st.a.nome||'')+'">';
+  } else if(i===2){
+    var cc=st.a.pais||0, opts=PAISES.map(function(p,k){return '<option value="'+k+'"'+(k===cc?' selected':'')+'>'+p[0]+' '+p[1]+'</option>';}).join('');
+    h+='<label class="l" for="f">WhatsApp</label><div class="phone"><select id="cc" aria-label="País">'+opts+'</select><input id="f" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 91234-5678" value="'+esc(st.a.fone||'')+'"></div>';
+  } else if(i===3){
+    h+='<label class="l" for="f">Empresa</label><input id="f" type="text" autocomplete="organization" placeholder="Nome da empresa" value="'+esc(st.a.empresa||'')+'">';
+  } else {
+    var list = [null,null,null,null,CARGOS,RAMOS,VENDS,TEMPOS,FORMATOS][i];
+    var key = ['','','','','cargo','ramo','vend','tempo','fmt'][i];
+    h+='<div class="opts">'+list.map(function(t,k){return '<button type="button" class="opt'+(st.a[key]===k?' sel':'')+'" data-k="'+k+'">'+(typeof t==='object' ? '<b>'+esc(t.t)+'</b><span class="od">'+esc(t.d)+'</span><span class="op">'+esc(t.p)+'</span>' : esc(t))+'</button>';}).join('')+'</div>';
+  }
+  if(i<=3) h+='<div class="err" id="err" role="alert"></div><button class="btn" id="go" type="button">'+(i===0?'Confirmar':'Continuar')+'</button>';
+  h+='</div>';
+  if(i<TOTAL-1) h+='<div class="next" aria-hidden="true">'+esc(titleOf(i+1))+'</div>';
+  main.innerHTML=h;
+  var f=document.getElementById('f');
+  if(f){ f.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); submitText(); } }); try{ f.focus({preventScroll:true}); }catch(e){} }
+  var go=document.getElementById('go'); if(go) go.onclick=submitText;
+  Array.prototype.forEach.call(main.querySelectorAll('.opt'),function(b){ b.onclick=function(){ pick(+b.dataset.k); }; });
+}
+
+function setErr(m){ var e=document.getElementById('err'); if(e) e.textContent=m||''; }
+
+function validate(i,v){
+  v=v.trim();
+  if(i===0) return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Digite um e-mail válido.';
+  if(i===1){
+    if(v.length<3) return 'Digite seu nome completo.';
+    if(v.split(/\s+/).filter(Boolean).length<2) return 'Digite nome e sobrenome.';
+    if(!/^[A-Za-zÀ-ÿ'\s.-]+$/.test(v)) return 'Use apenas letras.';
+    return '';
+  }
+  if(i===2){
+    var d=v.replace(/\D/g,''), pais=+document.getElementById('cc').value;
+    if(pais===0) return d.length===11 && d[2]==='9' ? '' : 'Informe DDD + número com 9 dígitos.';
+    return d.length>=7 && d.length<=12 ? '' : 'Número inválido.';
+  }
+  if(i===3) return v.length>=3 ? '' : 'Digite o nome da empresa.';
+  return '';
+}
+
+function submitText(){
+  var i=st.i, f=document.getElementById('f'), v=f.value, m=validate(i,v);
+  if(m){ setErr(m); return; }
+  v=v.trim();
+  if(i===0){ st.a.email=v.toLowerCase(); if(!st.leadId) st.leadId='lead_'+Date.now().toString(36); save('lead_created'); }
+  if(i===1){ st.a.nome=v; }
+  if(i===2){ st.a.pais=+document.getElementById('cc').value; st.a.fone=v; }
+  if(i===3){ st.a.empresa=v; }
+  save('answer:'+i); advance();
+}
+
+function pick(k){
+  var key=['','','','','cargo','ramo','vend','tempo','fmt'][st.i];
+  st.a[key]=k; save('answer:'+st.i);
+  Array.prototype.forEach.call(main.querySelectorAll('.opt'),function(b){ b.classList.toggle('sel',+b.dataset.k===k); });
+  setTimeout(advance,220);
+}
+
+function advance(){
+  if(st.i<TOTAL-1){ st.i++; render(); return; }
+  st.wait=true; render();
+  setTimeout(function(){ st.wait=false; st.done=true; st.res=calc(st.a); save('finish'); render(); },1400);
+}
+
+document.getElementById('back').onclick=function(){ if(st.i>0){ st.i--; render(); } };
+
+/* ===== Resultado ===== */
+function firstName(){ return (st.a.nome||'').split(/\s+/)[0]||''; }
+function renderResult(){
+  var r=st.res, f=r.fmt, h='';
+  var links='<a class="btn" href="'+PANORAMA_URL+'" target="_blank" rel="noopener">Ver o Panorama 2026</a><a class="btn ghost" href="'+SITE_URL+'" target="_blank" rel="noopener">Conhecer a Leadcultura</a>';
+  if(r.band==='desqualificado'){
+    h+='<span class="badge">Aplicação recebida</span><h1>Obrigado, '+esc(firstName())+'.</h1>';
+    h+='<p class="sub">Nossos formatos são voltados a quem responde pela operação comercial e de receita de empresas do agro, então não conseguimos seguir com a sua aplicação por ora. Você continua recebendo o conteúdo da Leadcultura.</p>';
+    h+='<div class="card">'+links.replace('class="btn"','class="btn" style="margin-top:0"')+'</div>';
+  } else if(r.band==='alta'){
+    h+='<span class="badge">'+esc(f.n)+'</span><h1>'+esc(firstName())+', vamos conversar sobre o seu formato.</h1>';
+    h+='<p class="sub">Seu perfil combina com o que fazemos. Escolha um horário direto na agenda do time Leadcultura e CHA.</p>';
+    h+='<div class="card"><b>Pauta da conversa</b><ul class="pauta"><li>Contexto comercial de '+esc(st.a.empresa)+'</li><li>Onde a receita trava hoje</li><li>Como funciona o formato escolhido</li><li>Próximos passos</li></ul><div class="facts"><b>'+esc(f.t)+'</b>'+esc(f.f)+'</div>';
+    h+='<iframe class="agenda" src="'+f.ag+'" title="Agenda" loading="lazy"></iframe><a class="btn ghost" href="'+f.ag+'" target="_blank" rel="noopener">Abrir a agenda em nova aba</a></div>';
+  } else if(r.band==='media'){
+    h+='<span class="badge">Quase lá</span><h1>Obrigado, '+esc(firstName())+'. Recebemos sua aplicação.</h1>';
+    h+='<p class="sub">Nosso time vai analisar o seu perfil e retornar pelo WhatsApp. Enquanto isso, veja o Panorama do agro.</p>';
+    h+='<div class="card"><div class="facts" style="margin-top:0"><b>'+esc(f.t)+'</b>'+esc(f.f)+'</div>'+links+'<a class="btn ghost" href="'+f.ag+'" target="_blank" rel="noopener">Prefiro já agendar uma conversa</a></div>';
+  } else {
+    h+='<span class="badge">Aplicação recebida</span><h1>Obrigado, '+esc(firstName())+'.</h1>';
+    h+='<p class="sub">Por enquanto o melhor para você é o nosso conteúdo. Vamos manter você por dentro do que a Leadcultura publica.</p>';
+    h+='<div class="card">'+links.replace('class="btn"','class="btn" style="margin-top:0"')+'</div>';
+  }
+  main.innerHTML=h;
+  if(location.hash==='#teste'){
+    var cf={}; cf[RD_KEYS.cargo]=CARGOS[st.a.cargo]; cf[RD_KEYS.ramo]=RAMOS[st.a.ramo]; cf[RD_KEYS.vend]=VENDS[st.a.vend]; cf[RD_KEYS.tempo]=TEMPOS[st.a.tempo]; cf[RD_KEYS.fmt]=f.rd;
+    var pay={leadId:st.leadId,email:st.a.email,nome:st.a.nome,fone:(PAISES[st.a.pais||0][1])+' '+st.a.fone,empresa:st.a.empresa,campos_rd:cf,score:r.score,faixa:r.band,utms:utms()};
+    document.getElementById('dbg').innerHTML='<div class="dbg">TESTE (só aparece com #teste)\ncargo '+r.parts.cargo+' + ramo '+r.parts.ramo+' + vendedores '+r.parts.vend+' + tempo '+r.parts.tempo+' = '+r.score+'/10 → '+r.band+' (alta ≥ '+THRESH_HIGH+', média ≥ '+THRESH_MID+')\n\n'+esc(JSON.stringify(pay,null,2))+'</div>';
+  }
+}
+
+render();
+</script>
+</body></html>
