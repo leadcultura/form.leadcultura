@@ -1,6 +1,6 @@
 /* CHA Agromkt - monitoramento (herdado do site antigo, verificado em 02/11/2026)
    GTM-WT6ZBD4 (Google Ads AW-11320372702, Hotjar, LinkedIn) | GA4 G-JNJT0QSWSN
-   Pixel Facebook 986528881368798 | Clarity mbdvjlo9dx | RD Station loader c3e559ff...
+   Pixel Facebook 986528881368798 | Clarity mbdvjlo9dx
    Carrega na 1a interacao ou 8s apos o load, async, para nao pesar LCP e TBT. */
 (function(){
   var w=window,d=document;
@@ -23,7 +23,6 @@
       s('https://connect.facebook.net/en_US/fbevents.js');
       w.fbq('init','986528881368798');w.fbq('track','PageView');
     }catch(_){}
-    s('https://d335luupugsy2.cloudfront.net/js/loader-scripts/c3e559ff-cad9-4826-b944-570718092ec2-loader.js');
   }
   ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){w.addEventListener(e,go,{once:true,passive:true})});
   function idle(){setTimeout(go,8000)}

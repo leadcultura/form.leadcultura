@@ -131,7 +131,7 @@ function fullPhone(){ return (PAISES[st.a.pais||0][1])+' '+(st.a.fone||''); }
 var rdSent={};
 function rdSend(ident, extra){
   if(rdSent[ident]) return; rdSent[ident]=1;
-  var a=st.a, body={ token_rdstation:RD_TOKEN, identificador:ident, email:a.email, traffic_source:cookie('__trf.src'), client_id:cookie('rdtrk') };
+  var a=st.a, body={ token_rdstation:RD_TOKEN, identificador:ident, email:a.email };
   if(a.nome) body.nome=a.nome;
   if(a.fone) body.telefone=fullPhone();
   if(a.empresa) body.empresa=a.empresa;

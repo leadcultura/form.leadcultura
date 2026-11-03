@@ -7,7 +7,7 @@ Edite `index.html` e faça commit na branch `main`. O GitHub Pages publica sozin
 
 Ajustes comuns (no topo do `<script>`):
 - `RD_TOKEN` e `RD_ID`: token público do RD Station (o mesmo do site da CHA) e os identificadores das conversões de e-mail e contato. A conversão final usa o `id` de cada formato em `FORMATOS`.
-- `t.js`: GTM, GA4, Pixel do Facebook, Clarity e loader do RD (copiado do site da CHA).
+- `t.js`: GTM, GA4, Pixel do Facebook e Clarity (copiado do site da CHA, sem o loader de monitoramento do RD).
 - `THRESH_HIGH` / `THRESH_MID`: cortes da nota (alta / média).
 - `S_CARGO`, `S_RAMO`, `S_VEND`, `S_TEMPO`: pontos de cada opção.
 - `DESQ_CARGO` / `DESQ_RAMO`: opções desqualificadas.
