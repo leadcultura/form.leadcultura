@@ -81,7 +81,8 @@ body{margin:0}
 var AGENDA_URL = "https://calendar.app.google/2xyjvcvbNEuv9WjMA";
 /* RD Station: mesma conta/token do site da CHA (API de conversões). Mude RD_TOKEN se usar outra conta. */
 var RD_TOKEN = "dc8f928c47a2649d8eb6a46d7fe919e3";
-var RD_ID = { email:"form-leadcultura-1-email", contato:"form-leadcultura-2-contato", final:"form-leadcultura-3-qualificacao" };
+var RD_ID = { email:"form-leadcultura-1-email", contato:"form-leadcultura-2-contato" };
+/* A conversão final usa o identificador do formato escolhido (campo "id" em FORMATOS). */
 var PANORAMA_URL = "https://pesquisa.leadcultura.com.br/p/panorama2026";
 var SITE_URL = "https://leadcultura.com.br";
 var THRESH_HIGH = 7, THRESH_MID = 4;
@@ -92,9 +93,9 @@ var RAMOS = ["Agro Indústria","AgTech e Tecnologia","Loja | Distribuidor | Reve
 var VENDS = ["1 a 3","4 a 10","11 a 20","Acima de 20"];
 /* Formatos (pergunta final). Faixas de investimento mostradas no formulário. */
 var FORMATOS = [
- {n:"Mentoria em grupo", t:"Mentoria em Grupo", d:"Ensinamos e direcionamos, você faz", p:"de R$ 18.000 a R$ 25.000 por ano", rd:"Mentoria em Grupo (ensinamos e direcionamos, você faz): de R$ 18.000 a R$ 25.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2gzzqwOfcFHhLmLhz1hVhinWF6dx86FEgrbzl5AKJUu6bvjDny9R_JM1z-fU7nUo1-UlfOhdwC?gv=true", f:"Aprendizado e direcionamento em grupo, com a sua equipe executando o plano."},
- {n:"Consultoria individual", t:"Consultoria individual", d:"Fazemos com você", p:"de R$ 20.000 a R$ 70.000 por ano", rd:"Consultoria individual (fazemos com você): de R$ 20.000 a R$ 70.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ22aS2F5f3ZVjfPhBkpSl-wyclTyOwI2-wZ7YW_jDHIpT4I8BI8DFy-3ulpAv8bD1_BET5-vb8C?gv=true", f:"Trabalho lado a lado com o nosso time, desenhando e implantando a operação de receita com você."},
- {n:"Operação de receita", t:"Nosso time executa a operação de receita", d:"Fazemos para você", p:"de R$ 75.000 a R$ 200.000 por ano", rd:"Nosso time executa a operação de receita (fazemos pra você): de R$ 75.000 a R$ 200.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2boZXbQ2fNS7YVPerjTBAM8UaWoH5pWNdvHXCkVV_oFr_HJN8OQTO9q2vYWh5Zb_tSo498eehd?gv=true", f:"O nosso time assume e executa a operação de receita da sua empresa."}
+ {n:"Mentoria em grupo", id:"form-leadcultura-mentoria-grupo-18-25mil", t:"Mentoria em Grupo", d:"Ensinamos e direcionamos, você faz", p:"de R$ 18.000 a R$ 25.000 por ano", rd:"Mentoria em Grupo (ensinamos e direcionamos, você faz): de R$ 18.000 a R$ 25.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2gzzqwOfcFHhLmLhz1hVhinWF6dx86FEgrbzl5AKJUu6bvjDny9R_JM1z-fU7nUo1-UlfOhdwC?gv=true", f:"Aprendizado e direcionamento em grupo, com a sua equipe executando o plano."},
+ {n:"Consultoria individual", id:"form-leadcultura-consultoria-individual-20-70mil", t:"Consultoria individual", d:"Fazemos com você", p:"de R$ 20.000 a R$ 70.000 por ano", rd:"Consultoria individual (fazemos com você): de R$ 20.000 a R$ 70.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ22aS2F5f3ZVjfPhBkpSl-wyclTyOwI2-wZ7YW_jDHIpT4I8BI8DFy-3ulpAv8bD1_BET5-vb8C?gv=true", f:"Trabalho lado a lado com o nosso time, desenhando e implantando a operação de receita com você."},
+ {n:"Operação de receita", id:"form-leadcultura-operacao-receita-75-200mil", t:"Nosso time executa a operação de receita", d:"Fazemos para você", p:"de R$ 75.000 a R$ 200.000 por ano", rd:"Nosso time executa a operação de receita (fazemos pra você): de R$ 75.000 a R$ 200.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2boZXbQ2fNS7YVPerjTBAM8UaWoH5pWNdvHXCkVV_oFr_HJN8OQTO9q2vYWh5Zb_tSo498eehd?gv=true", f:"O nosso time assume e executa a operação de receita da sua empresa."}
 ];
 var TEMPOS = ["Iniciando Empresa","Até 2 anos","Entre 2 e 5 anos","Entre 5 e 10 anos","Entre 10 e 15 anos","Mais de 15 anos"];
 /* Pontos (mesma ordem das listas acima). Máximo 3+2+3+2 = 10 */
@@ -154,7 +155,7 @@ function save(event){
   else if(event==='answer:3'){ rdSend(RD_ID.contato); track('form_lead_contato'); }
   else if(event==='finish'){
     var r=st.res, tag=['form-leadcultura','faixa-'+r.band];
-    rdSend(RD_ID.final,{tags:tag});
+    rdSend(r.fmt.id,{tags:tag});
     track('form_lead_qualificado',{faixa:r.band,score:r.score,formato:r.fmt.n});
     if(r.band==='alta'||r.band==='media') fb('CompleteRegistration',{content_name:r.fmt.n,status:r.band});
   }
