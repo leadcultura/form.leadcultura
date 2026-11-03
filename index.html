@@ -22,10 +22,10 @@
 body{background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px;min-height:100vh}
 .wrap{max-width:560px;margin:0 auto}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{display:block;height:22px;width:auto}
+.brand{display:flex;align-items:center;justify-content:center;gap:15px}
+.brand img{display:block;height:24.2px;width:auto}
 .brand .x{color:var(--muted);font-size:1rem;line-height:1}
-.brand .cha{height:28px}
+.brand .cha{height:30.8px}
 .brand .d{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand .l{display:none}:root:not([data-theme="light"]) .brand .d{display:block}}
 :root[data-theme="dark"] .brand .l{display:none}
@@ -50,6 +50,8 @@ input:focus,select:focus{border-color:var(--accent)}
 .err{color:var(--err);font-size:.88rem;min-height:1.3em;margin:6px 0 0}
 .btn{display:block;width:100%;margin-top:14px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);font:600 1rem 'Instrument Sans',sans-serif;padding:14px;cursor:pointer;text-align:center;text-decoration:none}
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.legal{margin:14px 2px 0;font-size:.8rem;line-height:1.45;color:var(--muted)}
+.legal a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 .opts{display:grid;gap:8px}
 .opt{text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;cursor:pointer;transition:border-color .12s,background .12s}
 .opt:hover{border-color:var(--accent)}
@@ -93,6 +95,7 @@ var AGENDA_URL = "https://calendar.app.google/2xyjvcvbNEuv9WjMA";
 var RD_TOKEN = "dc8f928c47a2649d8eb6a46d7fe919e3";
 var RD_ID = { email:"form-leadcultura-1-email", contato:"form-leadcultura-2-contato" };
 /* A conversão final usa o identificador do formato escolhido (campo "id" em FORMATOS). */
+var POLITICA_URL = "https://chaagromkt.com.br/politica-de-privacidade/";
 var PANORAMA_URL = "https://pesquisa.leadcultura.com.br/p/panorama2026";
 var SITE_URL = "https://leadcultura.com.br";
 var THRESH_HIGH = 7, THRESH_MID = 4;
@@ -104,8 +107,8 @@ var VENDS = ["1 a 3","4 a 10","11 a 20","Acima de 20"];
 /* Formatos (pergunta final). Faixas de investimento mostradas no formulário. */
 var FORMATOS = [
  {n:"Treinamento do Time + Advisor", id:"form-leadcultura-treinamento-advisor-18-25mil", t:"Treinamento do Time + Advisor para os Sócios", d:"Ensinamos e direcionamos, você faz", p:"de R$ 18.000 a R$ 25.000 por ano", rd:"Treinamento do Time + Advisor para os Sócios (ensinamos e direcionamos, você faz): de R$ 18.000 a R$ 25.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ2gzzqwOfcFHhLmLhz1hVhinWF6dx86FEgrbzl5AKJUu6bvjDny9R_JM1z-fU7nUo1-UlfOhdwC?gv=true", f:"Aprendizado e direcionamento em grupo, com a sua equipe executando o plano."},
- {n:"Consultoria individual", id:"form-leadcultura-consultoria-individual-20-70mil", t:"Consultoria individual", d:"Fazemos com você", p:"de R$ 20.000 a R$ 70.000 por ano", rd:"Consultoria individual (fazemos com você): de R$ 20.000 a R$ 70.000.", ag:"https://calendar.google.com/calendar/embed?src=comercial3%40fabricadevendas.page&ctz=America%2FSao_Paulo", f:"Trabalho lado a lado com o nosso time, desenhando e implantando a operação de receita com você."},
- {n:"Operação de receita", id:"form-leadcultura-operacao-receita-75-200mil", t:"Nosso time executa a operação de receita", d:"Fazemos para você", p:"de R$ 75.000 a R$ 200.000 por ano", rd:"Nosso time executa a operação de receita (fazemos pra você): de R$ 75.000 a R$ 200.000.", ag:"https://calendar.google.com/calendar/embed?src=comercial3%40fabricadevendas.page&ctz=America%2FSao_Paulo", f:"O nosso time assume e executa a operação de receita da sua empresa."}
+ {n:"Consultoria individual", id:"form-leadcultura-consultoria-individual-20-70mil", t:"Consultoria individual", d:"Fazemos com você", p:"de R$ 20.000 a R$ 70.000 por ano", rd:"Consultoria individual (fazemos com você): de R$ 20.000 a R$ 70.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ30t7BKwNCih0w2hStGCZlN6XyJ20fX8uSNC2UiwI3AYWkGLocThCBBmhdZxPusO18_XwdrCBXo?gv=true", f:"Trabalho lado a lado com o nosso time, desenhando e implantando a operação de receita com você."},
+ {n:"Operação de receita", id:"form-leadcultura-operacao-receita-75-200mil", t:"Nosso time executa a operação de receita", d:"Fazemos para você", p:"de R$ 75.000 a R$ 200.000 por ano", rd:"Nosso time executa a operação de receita (fazemos pra você): de R$ 75.000 a R$ 200.000.", ag:"https://calendar.google.com/calendar/appointments/schedules/AcZssZ30t7BKwNCih0w2hStGCZlN6XyJ20fX8uSNC2UiwI3AYWkGLocThCBBmhdZxPusO18_XwdrCBXo?gv=true", f:"O nosso time assume e executa a operação de receita da sua empresa."}
 ];
 var TEMPOS = ["Iniciando Empresa","Até 2 anos","Entre 2 e 5 anos","Entre 5 e 10 anos","Entre 10 e 15 anos","Mais de 15 anos"];
 /* Pontos (mesma ordem das listas acima). Máximo 3+2+3+2 = 10 */
@@ -208,6 +211,7 @@ function render(){
   }
   if(i<=3) h+='<div class="err" id="err" role="alert"></div><button class="btn" id="go" type="button">'+(i===0?'Confirmar':'Continuar')+'</button>';
   h+='</div>';
+  if(i===0) h+='<p class="legal">Ao clicar em Confirmar você automaticamente aceita os nossos <a href="'+POLITICA_URL+'" target="_blank" rel="noopener">termos de uso</a> e <a href="'+POLITICA_URL+'" target="_blank" rel="noopener">política de privacidade</a>.</p>';
   if(i<TOTAL-1) h+='<div class="next" aria-hidden="true">'+esc(titleOf(i+1))+'</div>';
   main.innerHTML=h;
   var f=document.getElementById('f');
