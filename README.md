@@ -6,7 +6,8 @@ Formulário de qualificação Leadcultura × CHA. Página estática (um único `
 Edite `index.html` e faça commit na branch `main`. O GitHub Pages publica sozinho em ~1 minuto.
 
 Ajustes comuns (no topo do `<script>`):
-- `WEBHOOK_URL`: endereço do webhook (n8n) que recebe cada resposta. Vazio = não envia nada.
+- `RD_TOKEN` e `RD_ID`: token público do RD Station (o mesmo do site da CHA) e os 3 identificadores de conversão (email, contato, qualificação).
+- `t.js`: GTM, GA4, Pixel do Facebook, Clarity e loader do RD (copiado do site da CHA).
 - `THRESH_HIGH` / `THRESH_MID`: cortes da nota (alta / média).
 - `S_CARGO`, `S_RAMO`, `S_VEND`, `S_TEMPO`: pontos de cada opção.
 - `DESQ_CARGO` / `DESQ_RAMO`: opções desqualificadas.
