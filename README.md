@@ -20,3 +20,6 @@ Modo teste: abra a página com `#teste` no final para ver a nota e o payload.
 Arquivo `CNAME` = `form.leadcultura.com.br`. No DNS do domínio leadcultura.com.br,
 crie um registro **CNAME** `form` apontando para `leadcultura.github.io`.
 Depois, em Settings > Pages do repositório, marque **Enforce HTTPS**.
+
+## Logos
+Pasta `img/`: versões clara e escura da Leadcultura e da CHA. O tema (claro/escuro) troca a versão automaticamente.
