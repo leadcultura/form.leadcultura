@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Presença confirmada · Receita Blindada</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#06110C;text-wrap:pretty}h1,h2{text-wrap:balance}
+a{color:#D9A84E}a:hover{color:#F0C877}
+img{max-width:100%}
+a:focus-visible{outline:3px solid #34D96A;outline-offset:2px}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,#D9A84E,#2BD35F);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40;opacity:.05;mix-blend-mode:overlay}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.nav.is-hidden{transform:translateY(-100%)}
+.cta{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(43,211,95,.35)}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.cta:hover::after{left:130%}
+.card-h{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.card-h:hover{transform:translateY(-6px);border-color:#D9A84E!important;box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 0 1px rgba(217,168,78,.25)}
+.logo-h{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.logo-h:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 16px 36px rgba(0,0,0,.55)}
+@media (prefers-reduced-motion:no-preference){
+@keyframes rb-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes rb-float{from{transform:translateY(-6px)}to{transform:translateY(8px)}}
+@keyframes rb-glow{0%,100%{box-shadow:0 0 0 0 rgba(43,211,95,.0)}50%{box-shadow:0 0 0 10px rgba(43,211,95,.12)}}
+@keyframes rb-in{from{opacity:0;transform:translateY(40px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes rb-par{to{transform:translateY(90px) scale(1.1)}}
+@keyframes rb-bar{to{transform:scaleX(1)}}
+.hero-in>*{animation:rb-rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>*:nth-child(1){animation-delay:.05s}.hero-in>*:nth-child(2){animation-delay:.18s}.hero-in>*:nth-child(3){animation-delay:.3s}.hero-in>*:nth-child(4){animation-delay:.42s}.hero-in>*:nth-child(5){animation-delay:.54s}.hero-in>*:nth-child(6){animation-delay:.66s}
+.float{animation:rb-float 6s ease-in-out infinite alternate}
+.float-s{animation:rb-float 8s ease-in-out infinite alternate}
+.cta-pulse{animation:rb-glow 3.2s ease-in-out infinite}
+@supports (animation-timeline:view()){
+.rv{animation:rb-in linear both;animation-timeline:view();animation-range:entry 0% entry 42%}
+.rv:nth-child(2n){animation-range:entry 6% entry 48%}
+.rv:nth-child(3n){animation-range:entry 12% entry 54%}
+.hero-bg{animation:rb-par linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+.progress{animation:rb-bar linear both;animation-timeline:scroll(root)}
+}
+}
+@media (prefers-reduced-motion:reduce){.hero-bg,.float,.float-s{animation:none}}
+</style>
+<script src="t.js"></script>
+</head>
+<body>
+<div style="background: #06110C; color: #F4F1E8; font-family: 'Inter', system-ui, sans-serif; line-height: 1.5; min-height: 100vh;">
+<div class="progress" aria-hidden="true"></div>
+<div style="position: relative; overflow: hidden; background: #06110C;">
+<img class="hero-bg" src="img/hero.jpg" alt="" aria-hidden="true" style="will-change: transform; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,14,10,0.78) 0%, rgba(5,14,10,0.6) 100%);"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 28px 32px 88px;">
+<img src="img/logo.png" alt="Receita Blindada, imersão executiva" style="display: block; height: 46px; width: auto; margin: 0 auto 56px;">
+<div class="hero-in" style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PRESENÇA CONFIRMADA</div>
+<h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; text-transform: uppercase;">Você está dentro. Falta só <span style="color: #D9A84E;">um passo.</span></h1>
+<p style="margin: 0 auto; font-size: 17px; color: #E6EDE8; max-width: 560px;">Entre agora no grupo de WhatsApp da Receita Blindada. É por lá que você recebe o link de acesso e todos os avisos da imersão.</p>
+<a class="cta cta-pulse" href="https://chat.whatsapp.com/L9SgldSuIhA7BtRtiXCSK7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; align-self: center; min-height: 58px; padding: 0 36px; background: linear-gradient(180deg, #34D96A, #1FB653); color: #04130A; border-radius: 6px; font-size: 17px; font-weight: 600; text-decoration: none;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#04130A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.7-4.2A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M9 8.800c.2 3 2.200 5.200 5.600 6.200l1.400-1.400-2-1-1 .8c-.9-.4-1.700-1.200-2.100-2.100l.8-1-1-2z"/></svg>
+Entrar no grupo do WhatsApp</a>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; text-align: left; gap: 20px 32px; margin-top: 8px;">
+<div style="display: flex; align-items: center; gap: 12px;"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div style="font-size: 13px; line-height: 1.35;">Sábado,<br>28 de&nbsp;novembro</div></div><div style="display: flex; align-items: center; gap: 12px;"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><polygon points="16 10 22 7 22 17 16 14"/></svg><div style="font-size: 13px; line-height: 1.35;">Online<br>e ao&nbsp;vivo</div></div><div style="display: flex; align-items: center; gap: 12px;"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div style="font-size: 13px; line-height: 1.35;">Das 8h às&nbsp;12h30<br><span style="font-size: 11px; color: #A8B8AD;">(Horário de&nbsp;Brasília)</span></div></div>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #07150E; border-top: 1px solid #12261B; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-direction: column; align-items: stretch; gap: 32px;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PRÓXIMOS PASSOS</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;"><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">01</div><div style="font-size: 16px; font-weight: 600; line-height: 1.25;">Entre no grupo do WhatsApp</div><div style="font-size: 13.5px; color: #A8B8AD;">É o canal oficial da imersão. Lá você recebe o link de&nbsp;acesso.</div></div><div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;"><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">02</div><div style="font-size: 16px; font-weight: 600; line-height: 1.25;">Fique de olho nos avisos</div><div style="font-size: 13.5px; color: #A8B8AD;">Todas as orientações e lembretes saem no&nbsp;grupo.</div></div><div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;"><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">03</div><div style="font-size: 16px; font-weight: 600; line-height: 1.25;">Reserve a manhã de 28/11</div><div style="font-size: 13.5px; color: #A8B8AD;">Das 8h às 12h30 (Horário de Brasília), online e ao&nbsp;vivo.</div></div>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; text-align: center; gap: 10px; font-size: 12px; color: #A8B8AD;">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A84E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+<span>O acesso é apenas por convite. Por favor, não compartilhe o link do&nbsp;grupo.</span>
+</div>
+</div>
+</div>
+<div style="background: #050E0A;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; font-size: 12px; color: #A8B8AD;">
+<div><span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; color: #F4F1E8;">Receita Blindada</span> <span>· Leadcultura e CHA Agromkt</span></div>
+<div>Sábado, 28 de novembro de 2026 · Online · Acesso apenas por convite</div>
+</div>
+</div>
+</div>
+<script>
+try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'receita_blindada_obrigado'}); }catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Receita Blindada: convite para a imersão</title>
+<meta name="description" content="Imersão online de meio dia em vendas, marketing, estratégia e tecnologia para a gestão comercial do agro. Sábado, 28 de novembro, das 8h às 12h30. Acesso apenas por convite.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#06110C;text-wrap:pretty}h1,h2{text-wrap:balance}
+a{color:#D9A84E}a:hover{color:#F0C877}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+[hidden]{display:none!important}
+#rb-ok:not([hidden]){display:flex}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #34D96A;outline-offset:2px}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,#D9A84E,#2BD35F);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40;opacity:.05;mix-blend-mode:overlay}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.nav.is-hidden{transform:translateY(-100%)}
+.cta{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(43,211,95,.35)}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.cta:hover::after{left:130%}
+.card-h{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.card-h:hover{transform:translateY(-6px);border-color:#D9A84E!important;box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 0 1px rgba(217,168,78,.25)}
+.logo-h{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.logo-h:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 16px 36px rgba(0,0,0,.55)}
+@media (prefers-reduced-motion:no-preference){
+@keyframes rb-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes rb-float{from{transform:translateY(-6px)}to{transform:translateY(8px)}}
+@keyframes rb-glow{0%,100%{box-shadow:0 0 0 0 rgba(43,211,95,.0)}50%{box-shadow:0 0 0 10px rgba(43,211,95,.12)}}
+@keyframes rb-in{from{opacity:0;transform:translateY(40px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes rb-par{to{transform:translateY(90px) scale(1.1)}}
+@keyframes rb-bar{to{transform:scaleX(1)}}
+.hero-in>*{animation:rb-rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>*:nth-child(1){animation-delay:.05s}.hero-in>*:nth-child(2){animation-delay:.18s}.hero-in>*:nth-child(3){animation-delay:.3s}.hero-in>*:nth-child(4){animation-delay:.42s}.hero-in>*:nth-child(5){animation-delay:.54s}.hero-in>*:nth-child(6){animation-delay:.66s}
+.float{animation:rb-float 6s ease-in-out infinite alternate}
+.float-s{animation:rb-float 8s ease-in-out infinite alternate}
+.cta-pulse{animation:rb-glow 3.2s ease-in-out infinite}
+@supports (animation-timeline:view()){
+.rv{animation:rb-in linear backwards;animation-timeline:view();animation-range:entry 0% entry 42%}
+.rv:nth-child(2n){animation-range:entry 6% entry 48%}
+.rv:nth-child(3n){animation-range:entry 12% entry 54%}
+.hero-bg{animation:rb-par linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+.progress{animation:rb-bar linear both;animation-timeline:scroll(root)}
+}
+}
+@media (prefers-reduced-motion:reduce){.hero-bg,.float,.float-s{animation:none}}
+.tl-line{width:2px!important;background:rgba(217,168,78,.16)!important;border-radius:2px}
+.tl-line::after{content:"";position:absolute;inset:0;border-radius:2px;background:linear-gradient(180deg,#F0C877,#D9A84E 60%,#2BD35F);box-shadow:0 0 14px rgba(217,168,78,.55);transform-origin:50% 0;transform:scaleY(1)}
+.tl-item>div:nth-child(2){transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,background-color .35s,box-shadow .35s}
+.tl-item:hover>div:nth-child(2){transform:translateX(8px);border-color:#D9A84E!important;background-color:rgba(24,58,40,.8)!important;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.tl-item:hover .tl-dot{background:#D9A84E!important;box-shadow:0 0 0 6px rgba(217,168,78,.2),0 0 18px rgba(217,168,78,.6)!important}
+.tl-dot{transition:background-color .3s,box-shadow .3s}
+@media (prefers-reduced-motion:no-preference){
+@keyframes tl-slide{from{opacity:0;transform:translateX(56px)}to{opacity:1;transform:none}}
+@keyframes tl-draw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes tl-dot{from{background-color:#071710;box-shadow:0 0 0 0 rgba(217,168,78,0);transform:scale(.7)}to{background-color:#D9A84E;box-shadow:0 0 0 6px rgba(217,168,78,.18),0 0 18px rgba(217,168,78,.6);transform:scale(1)}}
+@supports (animation-timeline:view()){
+.tl-item{animation-name:tl-slide!important}
+.tl-line::after{animation:tl-draw linear both;animation-timeline:view();animation-range:cover 12% cover 78%}
+.tl-dot{animation:tl-dot linear both;animation-timeline:view();animation-range:entry 55% entry 105%}
+}
+}
+</style>
+<script src="t.js"></script>
+</head>
+<body>
+<div style="background: #06110C; color: #F4F1E8; font-family: 'Inter', system-ui, sans-serif; line-height: 1.5;">
+
+<div class="progress" aria-hidden="true"></div>
+<svg class="grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><filter id="rb-noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#rb-noise)"/></svg>
+<!-- Menu -->
+<div class="nav" id="topo" style="background: rgba(6,17,12,0.82); border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between;">
+<img src="img/logo.png" alt="Receita Blindada, imersão executiva" style="display:block; height: 46px; width: auto;">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; font-size: 13px;">
+<a href="#cenario" style="color: #E6EDE8; text-decoration: none;">O cenário</a>
+<a href="#programacao" style="color: #E6EDE8; text-decoration: none;">Programação</a>
+<a href="#palestrantes" style="color: #E6EDE8; text-decoration: none;">Palestrantes</a>
+<a href="#diagnostico" style="color: #E6EDE8; text-decoration: none;">Diagnóstico</a>
+<a href="#para-quem" style="color: #E6EDE8; text-decoration: none;">Para quem&nbsp;é</a>
+<a href="#confirmar" style="color: #E6EDE8; text-decoration: none;">Inscrição</a>
+<a class="cta" href="#confirmar" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 18px; background: #2BD35F; color: #04130A; border-radius: 6px; font-weight: 600; text-decoration: none;">Confirmar minha&nbsp;presença</a>
+</div>
+</div>
+</div>
+
+<!-- Hero -->
+<div style="position: relative; overflow: hidden; background: #06110C;">
+<img class="hero-bg" src="img/hero.jpg" alt="" aria-hidden="true" style="will-change: transform; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center;">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,14,10,0.9) 0%, rgba(5,14,10,0.45) 45%, rgba(5,14,10,0) 75%);"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 72px 32px 88px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div class="hero-in" style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;">
+<span style="width: 28px; height: 2px; background: #D9A84E;"></span>IMERSÃO EXECUTIVA
+</div>
+<h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; text-transform: uppercase;">Como proteger a receita no meio do caos&nbsp;do<span style="display: block; color: #D9A84E;">Agronegócio.</span></h1>
+<p style="margin: 0; font-size: 17px; color: #E6EDE8; max-width: 460px;">Meio dia de imersão em vendas, marketing, estratégia e tecnologia para a&nbsp;gestão.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 4px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+<div style="font-size: 13px; line-height: 1.35;">Sábado,<br>28 de&nbsp;novembro</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><polygon points="16 10 22 7 22 17 16 14"/></svg>
+<div style="font-size: 13px; line-height: 1.35;">Online<br>e ao&nbsp;vivo</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+<div style="font-size: 13px; line-height: 1.35;">Das 8h às&nbsp;12h30<br><span style="font-size: 11px; color: #A8B8AD;">(Horário de&nbsp;Brasília)</span></div>
+</div>
+</div>
+<a class="cta" href="#confirmar" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; align-self: flex-start; min-height: 54px; padding: 0 36px; background: linear-gradient(180deg, #34D96A, #1FB653); color: #04130A; border-radius: 6px; font-size: 16px; font-weight: 600; text-decoration: none;">Confirmar minha&nbsp;presença
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#04130A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</a>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: #A8B8AD; max-width: 340px;">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A84E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+<span>Você está aqui porque sua empresa foi convidada para esta&nbsp;turma.</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+<img class="float" src="img/logo.png" alt="Receita Blindada, imersão executiva" style="display:block; width: 100%; max-width: 480px; height: auto;">
+</div>
+</div>
+</div>
+
+<!-- Cenário -->
+<div id="cenario" style="background: #07150E; border-top: 1px solid #12261B; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px;">
+<div style="flex: 1 1 240px; max-width: 320px; display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>O CENÁRIO</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Vender no agro ficou mais difícil. O seu comercial sente isso toda&nbsp;semana.</h2>
+</div>
+<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M17 17.5a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5a4.5 4.5 0 0 0 .5 8"/><path d="M12.5 11l-2.5 4h4l-2 4"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">01</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Clima e mercado&nbsp;instáveis</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">El Niño pesado no Sul e no Centro-Oeste, guerras e juros mexendo no custo dos insumos e na decisão de&nbsp;compra.</div>
+</div>
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">02</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Crédito curto, risco&nbsp;alto</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">Recuperações judiciais e produtor sem pagar: fechar a venda ficou mais arriscado do que&nbsp;vender.</div>
+</div>
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">03</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Regras mudando</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">Reforma tributária e política de crédito alteram custo, prazo e margem de toda a&nbsp;cadeia.</div>
+</div>
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 2 6 7 6z"/><path d="M12 14c0-3 2.5-5 6-5 0 3.5-2 5-6 5z"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">04</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Produtor mais&nbsp;seletivo</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">Ele troca produtividade por eficiência e compara cada real investido por&nbsp;hectare.</div>
+</div>
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.5 6 5"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">05</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Vendedor fala de&nbsp;planta</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">O time domina o produto, mas não articula o que dá mais margem para quem compra. O relacionamento&nbsp;sofre.</div>
+</div>
+<div class="rv card-h" style="background: linear-gradient(180deg, #0E2418, #0A1A12); border: 1px solid #234433; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M3 21h18M4 21V10l5 3V10l5 3V5h6v16"/><path d="M8 17h1M13 17h1M17 17h1"/></svg>
+<div><div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: #D9A84E;">06</div><div style="font-size: 16px; font-weight: 600; line-height: 1.2;">Indústria mais perto do&nbsp;produtor</div></div>
+</div>
+<div style="font-size: 13.5px; color: #A8B8AD;">As indústrias estão se reaproximando do campo e disputando a relação que antes era&nbsp;sua.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Para quem é -->
+<div id="para-quem" style="background: #06110C; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch;">
+<div style="position: relative; flex: 1 1 380px; min-height: 260px; overflow: hidden;">
+<img src="img/produtor.jpg" alt="Produtor olhando a lavoura ao pôr do sol, com um trator ao fundo" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,17,12,0) 55%, #06110C 100%);"></div>
+</div>
+<div style="flex: 1.3 1 480px; min-width: 0; padding: 56px 32px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PARA QUEM&nbsp;É</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.2;">Para quem responde pela meta de vendas e pela&nbsp;receita.</h2>
+<p style="margin: 0; font-size: 15px; color: #A8B8AD; max-width: 560px;">Donos, diretores e gerentes comerciais de indústria, distribuidora, revenda, cooperativa e empresa de máquinas do&nbsp;agro.</p>
+<div style="display: flex; flex-wrap: nowrap; overflow-x: auto; margin-top: 12px; padding-bottom: 4px;">
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4 21V10l5 3V10l5 3V5h6v16"/></svg>Indústria</div>
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; border-left: 1px solid #1C3326; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>Distribuidora ou&nbsp;revenda</div>
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; border-left: 1px solid #1C3326; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.5 6 5"/></svg>Cooperativa</div>
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; border-left: 1px solid #1C3326; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="16" r="4"/><circle cx="18" cy="17.5" r="2.5"/><path d="M11 16h4l1-7h-5L9 5H5v7"/></svg>Máquinas e&nbsp;implementos</div>
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; border-left: 1px solid #1C3326; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8c1 2 2 2.500 4 2.500M21 8c-1 2-2 2.500-4 2.500"/><path d="M7 10.500h10v6a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3z"/><path d="M10 15h.01M14 15h.01"/></svg>Pecuária</div>
+<div style="flex: 1 0 84px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 8px; border-left: 1px solid #1C3326; font-size: 12px; text-align: center;">
+<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#D9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 2 6 7 6z"/><path d="M12 14c0-3 2.500-5 6-5 0 3.500-2 5-6 5z"/></svg>Insumos</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Programação -->
+<div id="programacao" style="background: #071710; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px;">
+<div style="flex: 1 1 260px; max-width: 360px; display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>A PROGRAMAÇÃO</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Quatro blocos práticos. Em cada um, você sai com algo para usar na&nbsp;segunda-feira.</h2>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; position: relative; padding-left: 44px;">
+<div class="tl-line" aria-hidden="true" style="position: absolute; left: 10px; top: 24px; bottom: 24px;"></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Abertura</span>
+<span style="font-size: 12px; color: #A8B8AD;">15 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; font-size: 16px; font-weight: 600;">Receita Blindada começa&nbsp;aqui</div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>O mapa do que você vai montar nas próximas&nbsp;horas.</div></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Bloco 1</span>
+<span style="font-size: 12px; color: #A8B8AD;">45 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0;"><div style="font-size: 16px; font-weight: 600;">Mapa da&nbsp;Tempestade</div><div style="margin-top: 4px; font-size: 13px; color: #A8B8AD;">Onde a sua receita está sendo&nbsp;perdida.</div></div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>Os 5 indicadores para olhar toda&nbsp;semana.</div></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Bloco 2</span>
+<span style="font-size: 12px; color: #A8B8AD;">50 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0;"><div style="font-size: 16px; font-weight: 600;">Pare de vender fórmula, venda&nbsp;margem</div><div style="margin-top: 4px; font-size: 13px; color: #A8B8AD;">O que o produtor tecnificado quer ouvir do seu&nbsp;vendedor.</div></div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>Roteiro de conversa de margem para o&nbsp;vendedor.</div></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: rgba(217,168,78,0.12); border: 1px solid rgba(217,168,78,0.35); border-radius: 8px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2M7 3v3M11 3v3"/></svg>
+<span style="font-weight: 700; letter-spacing: 0.08em; color: #F0C877;">INTERVALO</span>
+<span style="color: #A8B8AD;">10 min</span></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Bloco 3</span>
+<span style="font-size: 12px; color: #A8B8AD;">50 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; font-size: 16px; font-weight: 600;">Previsibilidade no&nbsp;caos</div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>Modelo de forecast e checklist de risco do&nbsp;cliente.</div></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Bloco 4</span>
+<span style="font-size: 12px; color: #A8B8AD;">50 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0;"><div style="font-size: 16px; font-weight: 600;">Fazenda e WhatsApp, um funil&nbsp;único</div><div style="margin-top: 4px; font-size: 13px; color: #A8B8AD;">Como medir a venda e aumentar a performance da carteira e novos&nbsp;produtores</div></div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>Padrão de registro de visita e conversa que alimenta o&nbsp;CRM.</div></div></div>
+<div class="rv tl-item" style="position: relative; margin-bottom: 10px;"><div class="tl-dot" style="position: absolute; left: -39px; top: 50%; width: 12px; height: 12px; margin-top: -6px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #D9A84E; background: #071710;"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 14px 18px; background: rgba(15,40,28,0.55); border: 1px solid #1F3A2A; border-radius: 8px;">
+<div style="flex: 0 0 150px; display: flex; align-items: baseline; gap: 12px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #D9A84E; text-transform: uppercase;">Fechamento</span>
+<span style="font-size: 12px; color: #A8B8AD;">25 min</span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; font-size: 16px; font-weight: 600;">Diagnóstico Blindado</div>
+<div style="flex: 1 1 240px; min-width: 0; font-size: 12.5px; color: #A8B8AD;"><span style="color: #F4F1E8; font-weight: 600;">Você leva: </span>Relatório de diagnóstico em PDF e plano de 30 dias&nbsp;preenchido.</div></div></div>
+</div>
+</div>
+</div>
+
+<!-- Palestrantes -->
+<div id="palestrantes" style="background: #06110C; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-direction: column; gap: 32px;">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PALESTRANTES</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Quem conduz a&nbsp;imersão.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1000px;">
+<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/andre.jpg" alt="André Angonese, especialista em estratégias comerciais" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
+<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/marcos.jpg" alt="Marcos Mazza, especialista em vendas" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
+<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/ben.jpg" alt="Ben Martin Balik, especialista em estratégias de canais" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
+</div>
+</div>
+</div>
+
+<!-- Diagnóstico -->
+<div id="diagnostico" style="background: linear-gradient(90deg, #0A2519, #0D3A25 50%, #0A2519); border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>NO FECHAMENTO</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Diagnóstico Blindado da sua&nbsp;operação.</h2>
+<p style="margin: 0; font-size: 14px; color: #C5D2C9;">Durante a imersão você registra os dados de cada bloco. No final, nossa IA de diagnóstico devolve a nota de cada área, mostra onde a receita está vazando e ajuda você a montar o plano de 30&nbsp;dias.</p>
+</div>
+<div style="flex: 1.4 1 380px; min-width: 0; display: flex; flex-direction: column; align-items: center;">
+<img class="float-s" src="img/notebook.png" alt="Notebook exibindo o Diagnóstico Blindado, com nota 78 de 100 e as cinco áreas avaliadas" style="display:block; width: 100%; max-width: 560px; height: auto;">
+</div>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #D9A84E;">ÁREAS AVALIADAS</div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2BD35F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+<div><span style="font-weight: 600;">Vendas</span> <span style="color: #A8B8AD;">– Conversa de margem e rotina do&nbsp;time</span></div></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2BD35F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+<div><span style="font-weight: 600;">Previsibilidade</span> <span style="color: #A8B8AD;">– Funil e&nbsp;forecast</span></div></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2BD35F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+<div><span style="font-weight: 600;">Crédito</span> <span style="color: #A8B8AD;">– Risco tratado antes do&nbsp;fechamento</span></div></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2BD35F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+<div><span style="font-weight: 600;">Registro de&nbsp;campo</span> <span style="color: #A8B8AD;">– Visita na&nbsp;fazenda</span></div></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px;">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2BD35F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+<div><span style="font-weight: 600;">Registro digital</span> <span style="color: #A8B8AD;">– WhatsApp e&nbsp;CRM</span></div></div>
+</div>
+</div>
+</div>
+
+<!-- Empresas parceiras -->
+<div id="parceiros" style="background: #071710; border-bottom: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center;">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PARCEIROS</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Empresas que tornaram isso&nbsp;possível.</h2>
+<p style="margin: 0; font-size: 14px; color: #A8B8AD; max-width: 520px;">Empresas do ecossistema AgroPartners Hub que apoiam esta&nbsp;imersão.</p>
+</div>
+<div style="display: flex; flex-wrap: nowrap; justify-content: safe center; gap: 20px; width: 100%; overflow-x: auto; padding: 6px 0 10px;">
+<img class="rv logo-h" src="img/aai.jpg" alt="Angonese AgroInsights" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+<img class="rv logo-h" src="img/noctua.jpg" alt="Noctua Business" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+<img class="rv logo-h" src="img/cha.jpg" alt="CHA Agromkt" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+<img class="rv logo-h" src="img/agroresenha.jpg" alt="Agro Resenha Podcast" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+<img class="rv logo-h" src="img/agroprosa.jpg" alt="Agro e Prosa, credibilidade no agro" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+<img class="rv logo-h" src="img/c3.jpg" alt="Geração C3" loading="lazy" style="display: block; flex: 1 1 96px; min-width: 96px; max-width: 190px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 18px; border: 1px solid #1F3A2A;">
+</div>
+</div>
+</div>
+
+<!-- Confirmação -->
+<div id="confirmar" style="background: #06110C;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+<div style="flex: 0 1 260px; display: flex; justify-content: center; padding: 20px 0;">
+<img class="float-s" src="img/convite.png" alt="Convite Receita Blindada" style="display:block; width: 100%; max-width: 260px; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));">
+</div>
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>SEU CONVITE</div>
+<h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Garanta o seu lugar na&nbsp;turma.</h2>
+<p style="margin: 0; font-size: 14px; color: #A8B8AD;">A imersão é fechada e as vagas são limitadas. Confirme sua presença com os dados ao lado. Eles ajudam a preparar o diagnóstico da sua&nbsp;operação.</p>
+</div>
+<form id="rb-form" novalidate style="flex: 1.4 1 420px; min-width: 0; background: #F4F4F0; color: #14211A; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;">
+<div><label for="nome" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Nome completo</label><input id="nome" name="nome" type="text" placeholder="Nome completo*" autocomplete="name" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"></div>
+<div><label for="email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">E-mail corporativo</label><input id="email" name="email" type="email" placeholder="E-mail corporativo*" autocomplete="email" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"></div>
+<div><label for="whats" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">WhatsApp com&nbsp;DDD</label><input id="whats" name="whats" type="tel" placeholder="WhatsApp com DDD*" autocomplete="tel-national" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"></div>
+<div><label for="empresa" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Empresa*" autocomplete="organization" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"></div>
+<div><label for="cargo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Cargo</label><select id="cargo" name="cargo" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"><option value="" selected disabled>Cargo*</option><option>Analista</option><option>Gerente /&nbsp;Coordenador(a)</option><option>Diretor(a)</option><option>Dono / Sócio /&nbsp;CEO</option><option>Freelancer /&nbsp;Consultor</option><option>Vendedor /&nbsp;RTV</option></select></div>
+<div><label for="ramo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Ramo de atividade no&nbsp;agro</label><select id="ramo" name="ramo" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"><option value="" selected disabled>Ramo de atividade no&nbsp;agro*</option><option>Agro Indústria</option><option>AgTech e&nbsp;Tecnologia</option><option>Loja | Distribuidor | Revenda de&nbsp;Insumos</option><option>Agência de&nbsp;Marketing</option><option>Educação e&nbsp;Ensino</option><option>Máquinas ou&nbsp;Equipamentos</option><option>Serviços ou&nbsp;Consultorias</option><option>Cooperativa</option><option>Fintech | Banco |&nbsp;Crédito</option></select></div>
+<div><label for="vend" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Quantos vendedores você tem no seu&nbsp;time</label><select id="vend" name="vend" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"><option value="" selected disabled>Vendedores no time&nbsp;comercial*</option><option>1 a&nbsp;3</option><option>4 a&nbsp;10</option><option>11 a&nbsp;20</option><option>Acima de&nbsp;20</option></select></div>
+<div><label for="tempo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Tempo de mercado da&nbsp;empresa</label><select id="tempo" name="tempo" style="width: 100%; height: 44px; box-sizing: border-box; border: 1px solid #CDD2CC; border-radius: 6px; padding: 0 12px; font-size: 14px; font-family: inherit; background: #FFFFFF; color: #14211A;"><option value="" selected disabled>Tempo de mercado da&nbsp;empresa*</option><option>Iniciando Empresa</option><option>Até 2&nbsp;anos</option><option>Entre 2 a 5&nbsp;anos</option><option>Entre 5 a 10&nbsp;anos</option><option>Entre 10 a 15&nbsp;anos</option><option>Mais de 15&nbsp;anos</option></select></div>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+<input id="aceite" type="checkbox" style="width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: #1FB653;">
+<label for="aceite" style="font-size: 12px; color: #3A463E;">Autorizo o uso dos meus dados para a confirmação, o diagnóstico da imersão e o contato posterior. Veja&nbsp;a <a href="https://leadcultura.com.br/politica-de-privacidade/" target="_blank" rel="noopener" style="color: #14502B;">política de&nbsp;privacidade</a>.</label>
+</div>
+<div id="rb-erro" role="alert" style="min-height: 18px; font-size: 13px; color: #B3261E;"></div>
+<button class="cta cta-pulse" id="rb-enviar" type="submit" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; border: 0; border-radius: 6px; background: linear-gradient(180deg, #34D96A, #1FB653); color: #04130A; font-size: 16px; font-weight: 600; font-family: inherit; cursor: pointer;">Confirmar minha&nbsp;presença
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#04130A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</button>
+</form>
+<div id="rb-ok" hidden style="flex: 1.4 1 420px; min-width: 0; background: #F4F4F0; color: #14211A; border-radius: 12px; padding: 32px 24px; flex-direction: column; gap: 12px;">
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 24px;">Presença confirmada.</div>
+<p style="margin: 0; font-size: 15px; color: #3A463E;">Recebemos os seus dados. Em breve você recebe no e-mail e no WhatsApp o link de acesso e as orientações para sábado, 28 de novembro, das 8h às 12h30 (Horário de&nbsp;Brasília).</p>
+</div>
+</div>
+</div>
+
+<!-- Rodapé -->
+<div style="background: #050E0A; border-top: 1px solid #12261B;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; font-size: 12px; color: #A8B8AD;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; color: #F4F1E8;">Receita Blindada</span>
+<span>· Leadcultura e CHA&nbsp;Agromkt</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center;">
+<div style="display: flex; align-items: center; gap: 8px;">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Sábado, 28 de novembro de&nbsp;2026</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><polygon points="16 10 22 7 22 17 16 14"/></svg>Online</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D9A84E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Acesso apenas por&nbsp;convite</div>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+/* Envio ao RD Station: mesma API e token público do form.leadcultura.com.br */
+var RD_TOKEN = "dc8f928c47a2649d8eb6a46d7fe919e3";
+var RD_ID = "receita-blindada-confirmacao";
+var RD_KEYS = { cargo:"cf_qual_o_seu_cargo", ramo:"cf_qual_seu_ramo_de_ativiade_agro", vend:"cf_sla_quantas_vendedores_voce_tem_no_seu_time", tempo:"cf_sla_tempo_de_mercado_da_empresa" };
+(function(){
+  var form=document.getElementById('rb-form'), erro=document.getElementById('rb-erro'), btn=document.getElementById('rb-enviar'), ok=document.getElementById('rb-ok');
+  function v(id){ return document.getElementById(id).value.trim(); }
+  function utms(){ var o={}; try{ new URLSearchParams(location.search).forEach(function(val,k){ if(/^utm_/.test(k)) o["cf_"+k]=val; }); }catch(e){} return o; }
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault(); erro.textContent='';
+    var email=v('email'), nome=v('nome'), d=v('whats').replace(/\D/g,'');
+    if(nome.split(/\s+/).filter(Boolean).length<2){ erro.textContent='Digite nome e sobrenome.'; return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ erro.textContent='Digite um e-mail válido.'; return; }
+    if(d.length<10||d.length>11){ erro.textContent='Informe o WhatsApp com DDD.'; return; }
+    if(v('empresa').length<2){ erro.textContent='Digite o nome da empresa.'; return; }
+    var ids=['cargo','ramo','vend','tempo'];
+    for(var i=0;i<ids.length;i++){ if(!v(ids[i])){ erro.textContent='Preencha todos os campos marcados com *.'; return; } }
+    if(!document.getElementById('aceite').checked){ erro.textContent='Marque a autorização para continuar.'; return; }
+    var body={ token_rdstation:RD_TOKEN, identificador:RD_ID, email:email.toLowerCase(), nome:nome, telefone:'+55 '+v('whats'), empresa:v('empresa'), cargo:v('cargo'), tags:['receita-blindada','convite-28-11'] };
+    body[RD_KEYS.cargo]=v('cargo'); body[RD_KEYS.ramo]=v('ramo'); body[RD_KEYS.vend]=v('vend'); body[RD_KEYS.tempo]=v('tempo');
+    var u=utms(); for(var k in u) body[k]=u[k];
+    btn.disabled=true; btn.style.opacity='.7';
+    fetch('https://www.rdstation.com.br/api/1.3/conversions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){ if(!r.ok) throw new Error('rd'); })
+      .then(function(){
+        try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'receita_blindada_confirmacao'}); }catch(e){}
+        try{ window.fbq && window.fbq('track','Lead'); }catch(e){}
+        form.hidden=true; ok.hidden=false; ok.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(function(){ location.href='obrigado.html'; },700);
+      })
+      .catch(function(){ btn.disabled=false; btn.style.opacity='1'; erro.textContent='Não conseguimos enviar agora. Tente de novo em instantes.'; });
+  });
+})();
+</script>
+<script>
+/* Movimento extra: menu que esconde ao rolar para baixo e CTA magnético (só mouse, sem reduzir movimento) */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nav=document.getElementById('topo'), last=0, tick=false;
+  window.addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){
+      var y=window.scrollY||0;
+      if(nav){ if(y>last && y>160) nav.classList.add('is-hidden'); else nav.classList.remove('is-hidden'); }
+      last=y; tick=false;
+    });
+  },{passive:true});
+  if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.querySelectorAll('.cta').forEach(function(b){
+      b.addEventListener('mousemove',function(e){
+        var r=b.getBoundingClientRect(), x=(e.clientX-(r.left+r.width/2))*0.18, y=(e.clientY-(r.top+r.height/2))*0.28;
+        b.style.transform='translate('+x+'px,'+y+'px)';
+      });
+      b.addEventListener('mouseleave',function(){ b.style.transform=''; });
+    });
+  }
+})();
+</script>
+</body>
+</html>
