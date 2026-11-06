@@ -91,6 +91,15 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 .sp-area{margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#D9A84E}
 .sp-bio{margin:0;font-size:15.5px;line-height:1.55;color:#DCE5DF}
 .sp-bio strong{font-weight:700;color:#F4F1E8}
+.hero-logo{display:block;width:100%;max-width:320px;height:auto;position:relative;order:2;margin:8px auto 0;padding:0 32px;box-sizing:content-box}
+.hero-art{display:block;width:100%;max-width:620px;height:auto;position:relative;order:3;margin:0 auto -2px}
+.hero-c{order:1}
+@media (min-width:1000px){
+.hero-c{min-height:clamp(600px,49vw,800px);align-items:center}
+.hero-c>.hero-in{max-width:560px;padding:24px 0 72px}
+.hero-logo{position:absolute;order:0;margin:0;padding:0;box-sizing:border-box;width:25vw;max-width:460px;right:12%;top:clamp(48px,5.5vw,96px)}
+.hero-art{position:absolute;order:0;margin:0;max-width:none;width:60vw;max-width:1040px;right:1.5%;bottom:-2px}
+}
 </style>
 <script src="t.js"></script>
 </head>
@@ -116,10 +125,12 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 </div>
 
 <!-- Hero -->
-<div style="position: relative; overflow: hidden; background: #06110C;">
+<div class="hero" style="position: relative; overflow: hidden; background: #06110C; display: flex; flex-direction: column; align-items: center;">
 <img class="hero-bg" src="img/hero.jpg" alt="" aria-hidden="true" style="will-change: transform; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center;">
 <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,14,10,0.9) 0%, rgba(5,14,10,0.45) 45%, rgba(5,14,10,0) 75%);"></div>
-<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 56px 32px 0; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: stretch;">
+<img class="hero-logo float" src="img/logo.png" alt="Receita Blindada, imersão executiva">
+<img class="hero-art" src="img/palestrantes.webp" alt="Palestrantes da imersão: Marcos Mazza, André Angonese, Ben Martin Balik e Gabriel Toledo" width="1200" height="800">
+<div class="hero-c" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 56px 32px 0; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: stretch;">
 <div class="hero-in" style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 24px 0 72px;">
 <div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;">
 <span style="width: 28px; height: 2px; background: #D9A84E;"></span>IMERSÃO EXECUTIVA
@@ -147,10 +158,6 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A84E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
 <span>Você está aqui porque sua empresa foi convidada para esta&nbsp;turma.</span>
 </div>
-</div>
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 16px;">
-<img class="float" src="img/logo.png" alt="Receita Blindada, imersão executiva" style="display:block; width: 100%; max-width: 380px; height: auto;">
-<img class="hero-art" src="img/palestrantes.webp" alt="Palestrantes da imersão: Marcos Mazza, André Angonese, Ben Martin Balik e Gabriel Toledo" width="1200" height="800" style="display:block; width: 100%; max-width: 640px; height: auto; margin-bottom: -2px;">
 </div>
 </div>
 </div>
