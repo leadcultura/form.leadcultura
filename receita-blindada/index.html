@@ -81,6 +81,16 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 .tl-dot{animation:tl-dot linear both;animation-timeline:view();animation-range:entry 55% entry 105%}
 }
 }
+.sp-grid{display:grid;grid-template-columns:1fr;gap:20px;width:100%}
+@media (min-width:600px){.sp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1280px){.sp-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.sp-card{margin:0;display:flex;flex-direction:column;border:1px solid #234433;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0E2418,#0A1A12)}
+.sp-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#000}
+.sp-body{padding:24px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.sp-name{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;line-height:1.2;color:#F4F1E8}
+.sp-area{margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#D9A84E}
+.sp-bio{margin:0;font-size:15.5px;line-height:1.55;color:#DCE5DF}
+.sp-bio strong{font-weight:700;color:#F4F1E8}
 </style>
 <script src="t.js"></script>
 </head>
@@ -334,16 +344,16 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 
 <!-- Palestrantes -->
 <div id="palestrantes" style="background: #06110C; border-bottom: 1px solid #12261B;">
-<div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: flex; flex-direction: column; gap: 32px;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 64px 32px; display: flex; flex-direction: column; gap: 32px;">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
 <div style="display: flex; align-items: center; gap: 12px; color: #D9A84E; font-size: 12px; font-weight: 600; letter-spacing: 0.3em;"><span style="width: 28px; height: 2px; background: #D9A84E;"></span>PALESTRANTES</div>
 <h2 class="rv" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.2;">Quem conduz a&nbsp;imersão.</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px;">
-<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/andre.jpg" alt="André Angonese, especialista em estratégias comerciais" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
-<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/marcos.jpg" alt="Marcos Mazza, especialista em vendas" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
-<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/gabriel.jpg" alt="Gabriel Toledo, especialista em vendas de pecuária" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
-<figure class="rv card-h" style="margin: 0; border: 1px solid #234433; border-radius: 14px; overflow: hidden; background: #000;"><img src="img/ben.jpg" alt="Ben Martin Balik, especialista em estratégias de canais" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;"></figure>
+<div class="sp-grid">
+<figure class="rv card-h sp-card"><img src="img/andre_p.jpg" alt="Retrato de André Angonese" width="640" height="480" loading="lazy"><figcaption class="sp-body"><h3 class="sp-name">André Angonese</h3><p class="sp-area">Estratégia comercial e vendas no agro</p><p class="sp-bio">Construiu <strong>17 anos de carreira na Bayer</strong>, com foco em vendas de proteção de cultivos. Treinava <strong>mais de 120 profissionais por safra</strong> em <strong>24 pontos de venda</strong> de cooperativas e revendas, como LAR, Coamo e C.Vale. Participou do lançamento de Curbix, Fox e Adengo. Fundador da Angonese AgroInsights, atua com SPIN Selling e estratégia&nbsp;comercial.</p></figcaption></figure>
+<figure class="rv card-h sp-card"><img src="img/marcos_p.jpg" alt="Retrato de Marcos Fabio Mazza" width="640" height="480" loading="lazy"><figcaption class="sp-body"><h3 class="sp-name">Marcos Fabio Mazza</h3><p class="sp-area">Vendas consultivas e relacionamento com clientes</p><p class="sp-bio">Engenheiro agrônomo com <strong>43 anos de experiência</strong> e pós-graduação em Marketing. Atuou por <strong>quase 30 anos na Syngenta</strong> e suas antecessoras, em vendas, marketing, CRM e supply chain. Há <strong>11 anos</strong> lidera a MZ Mazza Consultoria e Capacitações, com <strong>mais de mil treinamentos</strong> de vendas consultivas no agro. É autor de dois livros sobre CRM e relacionamento com&nbsp;clientes.</p></figcaption></figure>
+<figure class="rv card-h sp-card"><img src="img/ben_p.jpg" alt="Retrato de Ben Martin Balik" width="640" height="480" loading="lazy"><figcaption class="sp-body"><h3 class="sp-name">Ben Martin Balik</h3><p class="sp-area">Marketing, vendas e receita no agro</p><p class="sp-bio">CEO da Leadcultura e diretor da CHA Agromkt, atua há <strong>mais de dez anos</strong> com marketing, vendas e receita no agro. Capacitou <strong>mais de 11 mil profissionais</strong> e realizou <strong>cerca de 100 palestras</strong> e treinamentos em dez estados. Aplicou os métodos N.E.A. e S.A.F.R.A. em <strong>20 empresas</strong>. A CHA conquistou três prêmios da RD&nbsp;Station.</p></figcaption></figure>
+<figure class="rv card-h sp-card"><img src="img/gabriel_p.jpg" alt="Retrato de Gabriel Toledo" width="640" height="480" loading="lazy"><figcaption class="sp-body"><h3 class="sp-name">Gabriel Toledo</h3><p class="sp-area">Canais e expansão comercial</p><p class="sp-bio">Foi gerente de canais e produtos da Nutron durante <strong>seis anos na Cargill</strong>, onde ampliou a rede de <strong>26 para mais de 200 representantes</strong> e multiplicou por <strong>mais de dez</strong> o volume de suplementação a pasto. Foi diretor de canais da Inbra Nutrição Animal no Brasil e na América Latina. Cofundador da Rúmina, também é cofundador da Noctua&nbsp;Business.</p></figcaption></figure>
 </div>
 </div>
 </div>
